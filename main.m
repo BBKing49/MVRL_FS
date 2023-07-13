@@ -22,7 +22,7 @@ for lambda1 = 2.^(-5:0) % 正交参数
                     option.lambda3 = lambda3;
                     option.lambda4 = lambda4;
                     option.rules = rules;
-                    option.k = 7;
+                    option.k = 7; % 近邻个数
                     option.m = num_cluster;
                     option.Maxiter = 100;
                     
