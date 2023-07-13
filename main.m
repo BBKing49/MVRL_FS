@@ -12,10 +12,10 @@ for v = 1:view_nums
 end
 best_nmi = 0;
 best_nmi1 = 0;
-for lambda1 = 2.^(-5:0) % 正交参数
-    for lambda2 = 2.^(-5:0) % 回归一致性约束参数
-        for lambda3 = 2.^(-5:0) % 正则化参数
-            for lambda4 = 2.^(-5:0) % 视角权重参数
+for lambda1 = 2.^(-5:5) % 正交参数
+    for lambda2 = 2.^(-5:5) % 回归一致性约束参数
+        for lambda3 = 2.^(-5:5) % 正则化参数
+            for lambda4 = 2.^(-5:5) % 视角权重参数
                 for rules = 3 % 规则数
                     option.lambda1 = lambda1;
                     option.lambda2 = lambda2;
@@ -33,7 +33,7 @@ for lambda1 = 2.^(-5:0) % 正交参数
                         new_represent = [new_represent,sepcifc_rep{v}];
                     end
 
-                    for f = 1:5                       
+                    for f = 1:3                       
                         pred_labels = kmeans(new_represent,num_cluster,'maxiter',500,'replicates',20,'EmptyAction','singleton');
                         result_cluster = ClusteringMeasure(labels, pred_labels);
                         nmi(f) = result_cluster(2);
