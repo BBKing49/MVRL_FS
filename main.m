@@ -1,7 +1,7 @@
 clear;
 clc;
 
-load(['../multi-view represent learning/mul_leavers.mat']);
+load(['mul_leavers.mat']);
 
 
 view_nums = size(data,1);
